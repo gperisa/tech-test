@@ -1,1 +1,3 @@
 # Scale
+
+In a scale of 100 users per day it is acceptable to do reporting work directly from JIRA and HR payroll APIs but as the number of users grows it will cause preformance and/or cost problems. JIRA API probably has it's limitations and HR payroll is used by other systems as a transactional system so it is a bad idea to use it for reporting at the same time, especially on a big scale. A solution would be to create a database from which reporting will be done on user request or as pregenerated reports, and which would be filled by querying APIs day by day. We should create a scheduled job that would run during the night and gather the previous day's data (new stories,work hours, org gram changes, etc...) and save it to database. 
