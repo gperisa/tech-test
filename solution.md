@@ -1,8 +1,10 @@
 # Solution.md
 
-My idea is to separate deveopment in 2 phases. In the first phase create a "proof of concept" that would connect to JIRA and HR Payroll APIs, retrieve the data and generate reports based on date/time input parameters. 
+Hours Tracking App
 
-In the second phase components StoryManager and ReportGenerator wouldn't connect to JIRA and HR Payroll APIs anymore but to a local database that we created just for reporting purposes (explained in salability part). To minimize code changes new DAL component is introduced and it implements JIRAConnector and HRConnector interfaces but instead of calling APIs it calls the database. 
+My idea is to separate development in 2 phases. In the first phase we'll create a "proof of concept" that would connect to JIRA and HR Payroll APIs, retrieve the data and generate reports based on date/time input parameters. 
+
+In the second phase components StoryManager and ReportGenerator wouldn't connect to JIRA and HR Payroll APIs anymore but to a local database that we created just for reporting purposes (explained in salability part). To minimize code changes new DAL component is introduced and it implements JIRAConnector and HRConnector interfaces but instead of calling APIs it calls the database. Component for scheduled data retrieval is created and it does it's job during the night by connecting to external systems, querying them and filling local database.
 
 Diagrams:
 
